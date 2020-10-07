@@ -13,6 +13,8 @@ The difference image of consecutive frames of video was used as input.
 
 * Python >= 3.5
 * Pytorch 0.4.0
+* OpenCV
+* Facial landmarks with dlib
 * CUDA (if CUDA available)
 
 ## Dataset
