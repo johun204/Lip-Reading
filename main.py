@@ -10,11 +10,12 @@ import numpy as np
 from model import *
 from lip_motion_dataloader import LipMotionDataset
 
-def train(model_N = 0, _LEARNING_RATE = 0.01, _BATCH_SIZE = 16):
+def train(model_N = 0, _LEARNING_RATE = 0.01):
 
 	_START_EPOCH = 0
 	_TOTAL_EPOCH = 150
 	
+	_BATCH_SIZE = 16
 	_MOMENTUM = 0.6
 	input_dim, hidden_dim, num_layers = 256, 100, 2
 
