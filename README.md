@@ -1,4 +1,4 @@
-# Lip-Motion-Recognition
+# Lip Motion Recognition
 This is graduation project of Konkuk Univ.
 
 ## Model architecture
