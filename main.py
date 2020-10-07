@@ -24,7 +24,7 @@ def train(model_N = 0, _LEARNING_RATE = 0.01, _BATCH_SIZE = 16):
 	
 	trainset = [1, 2, 3, 4, 5, 7, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 45, 46, 47, 48, 50, 53]
 	train_dataset = LipMotionDataset(trainset)
-	data_loader = DataLoader(train_dataset, batch_size=1, shuffle=True, num_workers=4)
+	data_loader = DataLoader(train_dataset, batch_size=1, shuffle=True)
 
 	model_C3DLSTM = C3DLSTM(input_dim, hidden_dim, _BATCH_SIZE, num_layers).to(device)
 	if model_N > 0:
