@@ -35,4 +35,4 @@ This is graduation project of Konkuk Univ.
 * "Have a good time" (8) : 68.83% [9791 / 14224]
 * "You are welcome" (9) : 51.81% [6641 / 12816]
 
-* Total Accuracy : 76.67%
+ Total Accuracy : 76.67% 
