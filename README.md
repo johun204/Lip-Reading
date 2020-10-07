@@ -2,12 +2,12 @@
 This is graduation project of Konkuk Univ.
 
 ## Model architecture
-<img src='https://raw.githubusercontent.com/johun204/lip-motion-recognition/main/media/model.png'>
+<img src='https://raw.githubusercontent.com/johun204/Lip-Motion-Recognition/main/media/model.png'>
 
 The difference image of consecutive frames of video was used as input.
 
 ## Result
-<img src='https://raw.githubusercontent.com/johun204/lip-motion-recognition/main/media/result.gif' height='250px'> <img src='https://raw.githubusercontent.com/johun204/lip-motion-recognition/main/media/result2.gif' height='250px'>
+<img src='https://raw.githubusercontent.com/johun204/Lip-Motion-Recognition/main/media/result.gif' height='250px'> <img src='https://raw.githubusercontent.com/johun204/Lip-Motion-Recognition/main/media/result2.gif' height='250px'>
 
 ## Requirements
 
@@ -23,7 +23,7 @@ The difference image of consecutive frames of video was used as input.
   the subject was asked to speak ten daily-use short English phrases. The same set of phrases was used in our previously collected OuluVS database. Every phrase was uttered three times.
   
 ## Data processing flow-chart
-<img src='https://raw.githubusercontent.com/johun204/lip-motion-recognition/main/media/data_processing.png' height='300px'>
+<img src='https://raw.githubusercontent.com/johun204/Lip-Motion-Recognition/main/media/data_processing.png' height='300px'>
 
 
 ## Accuracy (each frame)
