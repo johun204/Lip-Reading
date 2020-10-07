@@ -1,9 +1,10 @@
 # Lip-Motion-Recognition
 This is graduation project of Konkuk Univ.
 
-
 ## Model architecture
 <img src='https://raw.githubusercontent.com/johun204/lip-motion-recognition/main/media/model.png'>
+
+The difference image of consecutive frames of video was used as input.
 
 ## Result
 <img src='https://raw.githubusercontent.com/johun204/lip-motion-recognition/main/media/result.gif' height='250px'> <img src='https://raw.githubusercontent.com/johun204/lip-motion-recognition/main/media/result2.gif' height='250px'>
