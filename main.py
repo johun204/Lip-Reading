@@ -52,13 +52,6 @@ def train(model_N = 0, _LEARNING_RATE = 0.01, _BATCH_SIZE = 16):
 
 	for ep in tqdm(range(_TOTAL_EPOCH)):
 		if ep < _START_EPOCH: continue
-		lr = _LEARNING_RATE
-		for i in range(int(ep / 30)): lr = lr / 2
-		for param_group in optimizer.param_groups: param_group['lr'] = lr
-		print("\nLearning Rate : {0}".format(lr))
-
-		if ep+1 >= 50: 
-			for param_group in optimizer.param_groups: param_group['momentum'] = 0.9
 
 		running_loss, loss_cnt = 0.0, 0
 		save_loss = 0
@@ -90,9 +83,8 @@ def train(model_N = 0, _LEARNING_RATE = 0.01, _BATCH_SIZE = 16):
 		torch.save({'epoch': (ep + 1), 'model': model_C3DLSTM, 'model_state_dict': model_C3DLSTM.state_dict(), 'optimizer_state_dict': optimizer.state_dict(), 'optimizer': optimizer, 'loss': save_loss}, './model/model{}.pt.tar'.format(ep + 1))
 
 
-def eval(model_N = 0, _VIDEO=False, _MODEL_PATH):
+def eval(_MODEL_PATH):
 
-	
 	_BATCH_SIZE = 16
 
 	input_dim, hidden_dim, num_layers = 256, 100, 2
@@ -148,7 +140,7 @@ def eval(model_N = 0, _VIDEO=False, _MODEL_PATH):
 
 
 
-	file = open('./{0}/model{1}.txt'.format(_MODEL_NAME, model_N),'w', encoding='utf-8')
+	file = open('./result.txt','w', encoding='utf-8')
 	file.writelines("{0}\n".format(checkpoint['model']))
 	file.writelines("{0}\n".format(checkpoint['optimizer']))
 	file.writelines("epoch : {0}\n".format(checkpoint['epoch']))
