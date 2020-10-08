@@ -1,5 +1,5 @@
 # Lip Motion Recognition
-This is graduation project of Konkuk Univ.
+This is the PyTorch implementation of CNN-LSTM network trained on Ouluvs2 dataset.
 
 ## Model architecture
 <img src='https://raw.githubusercontent.com/johun204/Lip-Motion-Recognition/main/media/model.png'>
