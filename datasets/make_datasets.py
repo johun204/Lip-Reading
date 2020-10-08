@@ -36,7 +36,7 @@ def extract_lip_image(img, sx, sy, ex, ey, s, v, u, frame):
 		with open("./s{0}/s{0}_v{1}_u{2}/{3}/{4}.pickle".format(s, v, u, i + 8, frame), 'wb') as f: pickle.dump(lip, f, pickle.HIGHEST_PROTOCOL)
 
 def get_lip_image(s, v, u):
-	predictor_path = "../dlib/shape_predictor_68_face_landmarks.dat" # 랜드마크 파일 경로
+	predictor_path = "../dlib/shape_predictor_68_face_landmarks.dat" # facial landmarks with dlib
 
 	detector = dlib.get_frontal_face_detector()
 	predictor = dlib.shape_predictor(predictor_path)
@@ -69,10 +69,7 @@ def get_lip_image(s, v, u):
 				sx, ex = np.min(px), np.max(px)
 				sy, ey = np.min(py), np.max(py)
 
-				# 입술 가로 크기 옆으로 여유를 준다 (1.5배)
 				sx, ex = int(-int((np.min(px[48:])+np.max(px[48:]))/2)*0.5 + np.min(px[48:])*1.5), int(-int((np.min(px[48:])+np.max(px[48:]))/2)*0.5 + np.max(px[48:])*1.5)
-
-				# 세로크기는 중심으로 부터 가로크기의 절반만큼
 				sy, ey = int((np.min(py[48:])+np.max(py[48:]))/2) - int((ex-sx)/4), int((np.min(py[48:])+np.max(py[48:]))/2) + int((ex-sx)/4)
 
 				extract_lip_image(img, sx, sy, ex, ey, s, v, u, frame)
@@ -107,7 +104,7 @@ def make_merge_img(cnt, s, u):
 
 if __name__ == "__main__":
 	for i in range(1, 54):
-		if i == 29: continue # 29번은 입술이 보이지 않기 때문에 제외
+		if i == 29: continue # Video data of Subject 29 turned out to be unusable since his mouth was not seen most of the time.
 		for j in range(31, 61):
 			frame = get_lip_image(i, 1, j)
 			make_merge_img(frame, i, j)
