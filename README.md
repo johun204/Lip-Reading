@@ -7,7 +7,7 @@ This is the PyTorch implementation of CNN-LSTM trained on Ouluvs2 dataset.
 Use a three-channel image as input. The first channel uses the image of the previous frame. The second channel uses the image of the current frame. The third channel uses a different image of two consecutive images.
 
 ## Result
-<img src='https://raw.githubusercontent.com/johun204/Lip-Motion-Recognition/main/media/result.gif' height='250px'> <img src='https://raw.githubusercontent.com/johun204/Lip-Motion-Recognition/main/media/result2.gif' height='250px'>
+<img src='https://raw.githubusercontent.com/johun204/Lip-Motion-Recognition/main/media/result.gif' width='350px'> <img src='https://raw.githubusercontent.com/johun204/Lip-Motion-Recognition/main/media/result2.gif' width='350px'>
 
 ## Requirements
 
