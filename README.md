@@ -13,7 +13,7 @@ Use a three-channel image as input. The first channel uses the image of the prev
 
 * Python >= 3.5
 * Pytorch 0.4.0
-* OpenCV
+* OpenCV >= 3.4
 * Facial landmarks with dlib
 * CUDA (if CUDA available)
 
