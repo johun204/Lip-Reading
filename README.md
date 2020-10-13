@@ -1,6 +1,8 @@
 # Lip Reading
 This is the PyTorch implementation of CNN-LSTM trained on Ouluvs2 dataset.
 
+Classify the video with 10 short English phrases.
+
 ## Model architecture
 <img src='https://raw.githubusercontent.com/johun204/Lip-Reading/main/media/model.png'>
 
