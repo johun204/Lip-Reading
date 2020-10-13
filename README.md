@@ -1,4 +1,4 @@
-# Lip Motion Recognition
+# Lip Reading
 This is the PyTorch implementation of CNN-LSTM trained on Ouluvs2 dataset.
 
 ## Model architecture
