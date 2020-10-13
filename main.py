@@ -20,9 +20,7 @@ def train(model_N = 0, _LEARNING_RATE = 0.01):
 	input_dim, hidden_dim, num_layers = 256, 100, 2
 
 	device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-	
-	
-	
+
 	trainset = [1, 2, 3, 4, 5, 7, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 45, 46, 47, 48, 50, 53]
 	train_dataset = LipReadingDataset(trainset)
 	data_loader = DataLoader(train_dataset, batch_size=1, shuffle=True)
@@ -33,7 +31,6 @@ def train(model_N = 0, _LEARNING_RATE = 0.01):
 		model_C3DLSTM.load_state_dict(checkpoint['model_state_dict'])	
 	print(model_C3DLSTM)
 	model_C3DLSTM.train()
-	
 
 	optimizer = optim.SGD(model_C3DLSTM.parameters(), lr=_LEARNING_RATE, momentum=_MOMENTUM, weight_decay=0.00155)
 	criterion = nn.CrossEntropyLoss().to(device)
@@ -45,11 +42,9 @@ def train(model_N = 0, _LEARNING_RATE = 0.01):
 		print("epoch : {0}".format(checkpoint['epoch']))
 		print("loss : {0}".format(checkpoint['loss']))
 
-
 	h0 = Variable(torch.zeros(num_layers, _BATCH_SIZE, hidden_dim).float().cuda())
 	c0 = Variable(torch.zeros(num_layers, _BATCH_SIZE, hidden_dim).float().cuda())
 	init_hidden = (h0, c0)
-
 
 	for ep in tqdm(range(_TOTAL_EPOCH)):
 		if ep < _START_EPOCH: continue
@@ -62,7 +57,7 @@ def train(model_N = 0, _LEARNING_RATE = 0.01):
 			hidden = init_hidden
 			optimizer.zero_grad()
 			batch_loss = 0
-			
+
 			for s, image_s in enumerate(torch.split(image, 1, dim=1)):
 				image_s = image_s.view(16, 3, 16, 32)
 				lb = label[:,s]
@@ -70,7 +65,6 @@ def train(model_N = 0, _LEARNING_RATE = 0.01):
 				loss = criterion(output, lb.to(device))
 				batch_loss += loss
 
-			
 			batch_loss.backward()
 			optimizer.step()
 
@@ -96,8 +90,6 @@ def eval(_MODEL_PATH):
 	testset = LipReadingDataset(validset)
 	data_loader = DataLoader(testset, batch_size=1, shuffle=False)
 
-	
-
 	with torch.no_grad():
 		device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -107,16 +99,13 @@ def eval(_MODEL_PATH):
 		model_C3DLSTM.eval()
 		print("epoch : {0}".format(checkpoint['epoch']))
 		print("loss : {0}".format(checkpoint['loss']))
-		
 
 		h0 = Variable(torch.zeros(num_layers, _BATCH_SIZE, hidden_dim).float().cuda())
 		c0 = Variable(torch.zeros(num_layers, _BATCH_SIZE, hidden_dim).float().cuda())
 		init_hidden = (h0, c0)
 
-
 		class_correct = [0 for i in range(10)]
 		class_total = [0 for i in range(10)]
-
 
 		for tidx, (idx, image, label) in enumerate(tqdm(data_loader)):
 			tmp1 = list()
@@ -137,9 +126,6 @@ def eval(_MODEL_PATH):
 				for k in range(16):
 					class_correct[lb[k].item()] += c[k].item()
 					class_total[lb[k].item()] += 1
-
-
-
 
 	file = open('./result.txt','w', encoding='utf-8')
 	file.writelines("{0}\n".format(checkpoint['model']))
