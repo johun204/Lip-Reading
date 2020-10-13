@@ -1,7 +1,7 @@
 # Lip Reading
 This is the PyTorch implementation of CNN-LSTM trained on Ouluvs2 dataset.
 
-Classify the video with 10 short English phrases.
+After extracting lip area from the video of speaking ten daily-use short English phrases, classify using the designed model.
 
 ## Model architecture
 <img src='https://raw.githubusercontent.com/johun204/Lip-Reading/main/media/model.png'>
