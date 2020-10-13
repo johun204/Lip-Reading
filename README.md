@@ -2,12 +2,12 @@
 This is the PyTorch implementation of CNN-LSTM trained on Ouluvs2 dataset.
 
 ## Model architecture
-<img src='https://raw.githubusercontent.com/johun204/Lip-Motion-Recognition/main/media/model.png'>
+<img src='https://raw.githubusercontent.com/johun204/Lip-Reading/main/media/model.png'>
 
 Use a three-channel image as input. The first channel uses the image of the previous frame. The second channel uses the image of the current frame. The third channel uses a different image of two consecutive images.
 
 ## Result
-<img src='https://raw.githubusercontent.com/johun204/Lip-Motion-Recognition/main/media/result.gif' width='350px'> <img src='https://raw.githubusercontent.com/johun204/Lip-Motion-Recognition/main/media/result2.gif' width='350px'>
+<img src='https://raw.githubusercontent.com/johun204/Lip-Reading/main/media/result.gif' width='350px'> <img src='https://raw.githubusercontent.com/johun204/Lip-Reading/main/media/result2.gif' width='350px'>
 
 ## Requirements
 
@@ -23,7 +23,7 @@ Use a three-channel image as input. The first channel uses the image of the prev
   the subject was asked to speak ten daily-use short English phrases. The same set of phrases was used in our previously collected OuluVS database. Every phrase was uttered three times.
   
 ## Data processing flow-chart
-<img src='https://raw.githubusercontent.com/johun204/Lip-Motion-Recognition/main/media/data_processing.png' height='300px'>
+<img src='https://raw.githubusercontent.com/johun204/Lip-Reading/main/media/data_processing.png' height='300px'>
 
 
 ## Accuracy (each frame)
