@@ -8,7 +8,7 @@ from tqdm import tqdm
 import numpy as np
 
 from model import *
-from lip_motion_dataloader import LipMotionDataset
+from lip_reading_dataloader import LipReadingDataset
 
 def train(model_N = 0, _LEARNING_RATE = 0.01):
 
@@ -24,7 +24,7 @@ def train(model_N = 0, _LEARNING_RATE = 0.01):
 	
 	
 	trainset = [1, 2, 3, 4, 5, 7, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 45, 46, 47, 48, 50, 53]
-	train_dataset = LipMotionDataset(trainset)
+	train_dataset = LipReadingDataset(trainset)
 	data_loader = DataLoader(train_dataset, batch_size=1, shuffle=True)
 
 	model_C3DLSTM = C3DLSTM(input_dim, hidden_dim, _BATCH_SIZE, num_layers).to(device)
@@ -93,7 +93,7 @@ def eval(_MODEL_PATH):
 	validset = [6, 8, 9, 15, 26, 30, 34, 43, 44, 49, 51, 52]
 	classes = {0: 'Excuse me', 1: 'Goodbye', 2: 'Hello', 3: 'How are you', 4: 'Nice to meet you', 5: 'See you', 6: 'I am sorry', 7: 'Thank you', 8: 'Have a good time', 9: 'You are welcome'}
 
-	testset = LipMotionDataset(validset)
+	testset = LipReadingDataset(validset)
 	data_loader = DataLoader(testset, batch_size=1, shuffle=False)
 
 	
