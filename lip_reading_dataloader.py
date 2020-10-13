@@ -17,7 +17,6 @@ class LipReadingDataset(Dataset):
 
 	def __getitem__(self, index):
 		s, u = self.slist[index // 30], index % 30 + 31
-
 		result = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 		x = torch.as_tensor([get_imgs(s, u, k) for k in range(16)]).float()
