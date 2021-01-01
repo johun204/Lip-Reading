@@ -4,7 +4,8 @@ This is the PyTorch implementation of CNN-LSTM trained on Ouluvs2 dataset.
 After extracting lip area from the video of speaking ten daily-use short English phrases, classify using the designed model.
 
 ## Model architecture
-<img src='https://raw.githubusercontent.com/johun204/Lip-Reading/main/media/model.png'>
+
+![model](https://raw.githubusercontent.com/johun204/Lip-Reading/main/media/model.png)
 
 Use a three-channel image as input. The first channel uses the image of the previous frame. The second channel uses the image of the current frame. The third channel uses a different image of two consecutive images.
 
@@ -25,8 +26,8 @@ Use a three-channel image as input. The first channel uses the image of the prev
   the subject was asked to speak ten daily-use short English phrases. The same set of phrases was used in our previously collected OuluVS database. Every phrase was uttered three times.
   
 ## Data processing flow-chart
-<img src='https://raw.githubusercontent.com/johun204/Lip-Reading/main/media/data_processing.png' height='300px'>
 
+![Data processing](https://raw.githubusercontent.com/johun204/Lip-Reading/main/media/data_processing.png)
 
 ## Accuracy (each frame)
 * "Excuse me" : 63.50% [8271 / 13024]
