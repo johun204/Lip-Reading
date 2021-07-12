@@ -29,7 +29,7 @@ Use a three-channel image as input. The first channel uses the image of the prev
 
 ![Data processing](https://raw.githubusercontent.com/johun204/Lip-Reading/main/media/data_processing.png)
 
-## Accuracy (each frame)
+<!-- ## Accuracy (each frame)
 * "Excuse me" : 63.50% [8271 / 13024]
 * "Goodbye" : 86.46% [7429 / 8592]
 * "Hello" : 32.32% [1986 / 6144]
@@ -42,3 +42,4 @@ Use a three-channel image as input. The first channel uses the image of the prev
 * "You are welcome" : 51.81% [6641 / 12816]
 
  Total Accuracy : 76.67% 
+-->
